@@ -30,16 +30,16 @@ public class IngresarAsistencia extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel3 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        lblCurso = new javax.swing.JLabel();
+        cbCurso = new javax.swing.JComboBox<>();
+        lblAsignatura = new javax.swing.JLabel();
+        cbAsignatura = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        tablaAlumnos = new javax.swing.JTable();
+        lblListaAlumnos = new javax.swing.JLabel();
+        btnGuardar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,21 +51,21 @@ public class IngresarAsistencia extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 204, 51));
         jPanel2.setLayout(new java.awt.GridLayout(2, 2, 5, 5));
 
-        jLabel2.setText("CURSO");
-        jPanel2.add(jLabel2);
+        lblCurso.setText("CURSO");
+        jPanel2.add(lblCurso);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox1);
+        cbCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(cbCurso);
 
-        jLabel3.setText("ASIGNATURA");
-        jPanel2.add(jLabel3);
+        lblAsignatura.setText("ASIGNATURA");
+        jPanel2.add(lblAsignatura);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox2);
+        cbAsignatura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(cbAsignatura);
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 51));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaAlumnos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -76,10 +76,10 @@ public class IngresarAsistencia extends javax.swing.JFrame {
                 "CÉDULA", "NOMBRE", "APELLIDO", "FALTAS"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaAlumnos);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setText("LISTA ALUMNOS");
+        lblListaAlumnos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblListaAlumnos.setText("LISTA ALUMNOS");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -89,7 +89,7 @@ public class IngresarAsistencia extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(183, 183, 183)
-                        .addComponent(jLabel4))
+                        .addComponent(lblListaAlumnos))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -99,15 +99,15 @@ public class IngresarAsistencia extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jLabel4)
+                .addComponent(lblListaAlumnos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Guardar");
+        btnGuardar.setText("Guardar");
 
-        jButton2.setText("Cancelar");
+        btnCancelar.setText("Cancelar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -127,9 +127,9 @@ public class IngresarAsistencia extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(153, 153, 153)
-                        .addComponent(jButton1)
+                        .addComponent(btnGuardar)
                         .addGap(132, 132, 132)
-                        .addComponent(jButton2)))
+                        .addComponent(btnCancelar)))
                 .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -143,8 +143,8 @@ public class IngresarAsistencia extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnGuardar)
+                    .addComponent(btnCancelar))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
@@ -198,18 +198,18 @@ public class IngresarAsistencia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JComboBox<String> cbAsignatura;
+    private javax.swing.JComboBox<String> cbCurso;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblAsignatura;
+    private javax.swing.JLabel lblCurso;
+    private javax.swing.JLabel lblListaAlumnos;
+    private javax.swing.JTable tablaAlumnos;
     // End of variables declaration//GEN-END:variables
 }

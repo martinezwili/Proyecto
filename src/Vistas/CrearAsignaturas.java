@@ -30,19 +30,21 @@ public class CrearAsignaturas extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        lblCodigo = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        lblNombre = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        lblCurso = new javax.swing.JLabel();
+        txtCurso = new javax.swing.JTextField();
+        lblDescripcion = new javax.swing.JLabel();
+        txtDescripcion = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaAsignaturas = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        btnCrear = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,33 +53,33 @@ public class CrearAsignaturas extends javax.swing.JFrame {
 
         jPanel2.setLayout(new java.awt.GridLayout(4, 2, 10, 5));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Código");
-        jPanel2.add(jLabel2);
-        jPanel2.add(jTextField2);
+        lblCodigo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCodigo.setText("Código");
+        jPanel2.add(lblCodigo);
+        jPanel2.add(txtCodigo);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Nombre");
-        jPanel2.add(jLabel3);
+        lblNombre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblNombre.setText("Nombre");
+        jPanel2.add(lblNombre);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtNombreActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField1);
+        jPanel2.add(txtNombre);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setText("Curso");
-        jPanel2.add(jLabel4);
-        jPanel2.add(jTextField3);
+        lblCurso.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCurso.setText("Curso");
+        jPanel2.add(lblCurso);
+        jPanel2.add(txtCurso);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setText("Descripción");
-        jPanel2.add(jLabel5);
-        jPanel2.add(jTextField4);
+        lblDescripcion.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblDescripcion.setText("Descripción");
+        jPanel2.add(lblDescripcion);
+        jPanel2.add(txtDescripcion);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaAsignaturas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -88,11 +90,20 @@ public class CrearAsignaturas extends javax.swing.JFrame {
                 "Código", "Nombre", "Curso"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaAsignaturas);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("LISTA DE ASIGNATURAS");
         jPanel4.add(jLabel6);
+
+        btnCrear.setText("Crear");
+
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -105,7 +116,12 @@ public class CrearAsignaturas extends javax.swing.JFrame {
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addComponent(btnCrear)
+                        .addGap(86, 86, 86)
+                        .addComponent(btnCancelar)))
                 .addGap(19, 19, 19))
         );
         jPanel3Layout.setVerticalGroup(
@@ -114,8 +130,12 @@ public class CrearAsignaturas extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCrear)
+                    .addComponent(btnCancelar))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -147,7 +167,7 @@ public class CrearAsignaturas extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -164,9 +184,13 @@ public class CrearAsignaturas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,21 +228,23 @@ public class CrearAsignaturas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnCrear;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblCurso;
+    private javax.swing.JLabel lblDescripcion;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JTable tablaAsignaturas;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtCurso;
+    private javax.swing.JTextField txtDescripcion;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
